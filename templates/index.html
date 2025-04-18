@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BI Engineer Prep Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Business Intelligence Engineer Prep Plan</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Topic</th>
+        </tr>
+        {% for date, topic in prep_plan.items() %}
+        <tr>
+            <td>{{ date }}</td>
+            <td>{{ topic }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
