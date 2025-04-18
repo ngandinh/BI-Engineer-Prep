@@ -1,45 +1,83 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>BI Engineer Prep Plan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 2em;
-        }
-
-        h1 {
-            color: #2c3e50;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-        }
-
-        th {
-            background-color: #f0f0f0;
-        }
-    </style>
+    <title>Business Intelligence Engineer Prep Plan</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Business Intelligence Engineer Prep Plan</h1>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Topic</th>
-        </tr>
-        {% for date, topic in prep_plan.items() %}
-        <tr>
-            <td>{{ date }}</td>
-            <td>{{ topic }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <h1>Business Intelligence Engineer Prep Plan</h1>
+
+        <!-- 7-Step Learning Path Overview -->
+        <div class="learning-path">
+            <p>
+                🧠 <strong>1. SQL for Data Analysis</strong> (2–3 weeks)<br>
+                🔹 <strong>Resources:</strong> Mode SQL Tutorial, LeetCode SQL, Kaggle Datasets<br>
+                📘 <strong>What to Learn:</strong> SELECT, WHERE, GROUP BY, HAVING, JOINs, Subqueries, CTEs, CASE, Window Functions<br>
+                🧩 <strong>Project:</strong> Build a “Transaction Anomaly Detector” in SQL
+            </p>
+
+            <p>
+                🐍 <strong>2. Python for Data Analytics</strong> (3–4 weeks)<br>
+                🔹 <strong>Resources:</strong> Automate the Boring Stuff, DataCamp, Pandas & NumPy Docs<br>
+                📘 <strong>What to Learn:</strong> File handling, pandas, plotting, simple machine learning<br>
+                🧩 <strong>Project:</strong> Internal audit risk score calculator
+            </p>
+
+            <p>
+                📊 <strong>3. Power BI / Tableau / QuickSight</strong> (2–3 weeks)<br>
+                🔹 <strong>Resources:</strong> Microsoft Learn, Guy in a Cube, Tableau Public<br>
+                📘 <strong>What to Learn:</strong> Data import, DAX, interactive visuals, publishing<br>
+                🧩 <strong>Project:</strong> Compliance dashboard (late approvals, audit trends)
+            </p>
+
+            <p>
+                🏗️ <strong>4. ETL & Data Modeling Basics</strong> (2–3 weeks)<br>
+                🔹 <strong>Resources:</strong> Kimball Toolkit, SSIS/Python ETL tutorials<br>
+                📘 <strong>What to Learn:</strong> Extract/Transform/Load, star vs snowflake schemas<br>
+                🧩 <strong>Project:</strong> HR data ETL pipeline
+            </p>
+
+            <p>
+                📈 <strong>5. Statistics for Audit & BI</strong> (2 weeks, parallel)<br>
+                🔹 <strong>Resources:</strong> Khan Academy, StatQuest<br>
+                📘 <strong>What to Learn:</strong> Descriptive stats, regression, sampling, hypothesis testing
+            </p>
+
+            <p>
+                📂 <strong>6. Wrap It Up: Projects + Interview Prep</strong> (2–4 weeks)<br>
+                🔹 <strong>Resources:</strong> Amazon STAR method, Glassdoor Qs, Interviewing.io<br>
+                🧭 <strong>3-Month Timeline:</strong>
+                <table class="timeline">
+                    <thead><tr><th>Week</th><th>Focus</th><th>Tools</th></tr></thead>
+                    <tbody>
+                        <tr><td>1–2</td><td>SQL Fundamentals</td><td>Mode, LeetCode</td></tr>
+                        <tr><td>3–4</td><td>Python Basics + Pandas</td><td>Automate, DataCamp</td></tr>
+                        <tr><td>5–6</td><td>Power BI/Tableau Dashboards</td><td>Power BI, Tableau</td></tr>
+                        <tr><td>7–8</td><td>ETL + Data Modeling</td><td>Python/SSIS</td></tr>
+                        <tr><td>9</td><td>Statistics Refresher</td><td>Khan, StatQuest</td></tr>
+                        <tr><td>10</td><td>Project #1 (Audit Dashboard)</td><td>BI tool + SQL</td></tr>
+                        <tr><td>11</td><td>Project #2 (Python Risk Analyzer)</td><td>Python + Pandas</td></tr>
+                        <tr><td>12</td><td>STAR Prep + Mock Interviews</td><td>LinkedIn, Pramp</td></tr>
+                    </tbody>
+                </table>
+            </p>
+        </div>
+
+        <!-- Daily Plan Table -->
+        <table>
+            <thead>
+                <tr><th>Date</th><th>Topic</th></tr>
+            </thead>
+            <tbody>
+                {% for day, topic in prep_plan.items() %}
+                <tr>
+                    <td>{{ day }}</td>
+                    <td>{{ topic }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
